@@ -118,6 +118,13 @@
 
                             <button type="submit" class="btn btn-primary btn-submit-ticket">Log Ticket &#10148;</button>
                         </form>
+                        <!-- Success Message (Hidden by default) -->
+<div id="success-message" style="display: none; text-align: center; padding: 2rem; background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; margin-top: 1rem;">
+    <h3 style="color: #2e7d32; margin-bottom: 0.5rem;">✅ Ticket Logged Successfully!</h3>
+    <p style="color: #1b5e20;">Your request has been routed to the IT Service Desk based on your selected priority.</p>
+    <button onclick="location.reload()" class="btn btn-secondary" style="margin-top: 1rem;">Log Another Ticket</button>
+</div>
+                        
                     </div>
                 </div>
 
@@ -225,8 +232,19 @@
                     technicianSelect.value = automatedUpdates.technician;
                 }
             });
+
+            // 4. Handle Form Submission to show "Ticket Logged" message
+            const ticketForm = document.querySelector('.ticket-form');
+            const successMessage = document.getElementById('success-message');
+
+            ticketForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Stops the page from refreshing
+                ticketForm.style.display = 'none'; // Hides the form
+                successMessage.style.display = 'block'; // Shows the green success box
+            });
         });
-    </script>
+                                            </script>
+    
 </body>
                                     </html>
     
