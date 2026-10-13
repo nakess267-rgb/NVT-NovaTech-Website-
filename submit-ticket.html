@@ -192,6 +192,45 @@
             <p>&copy; 2026 NovaTech Solutions Hub. Academic Project.</p>
         </div>
     </footer>
+        <!-- Add this JavaScript right before the closing </body> tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Automatically set the exact current Date and Time
+            const timestampInput = document.getElementById('timestamp');
+            const now = new Date();
+            // Format time correctly for the datetime-local HTML input
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            timestampInput.value = now.toISOString().slice(0, 16);
+
+            // 2. Ticket Logic based on the NovaTech Excel Workbook data
+            const ticketLogic = {
+                "Hardware": { priority: "Medium", technician: "R. Botha" },
+                "Network/Connectivity": { priority: "Critical", technician: "S. Naidoo" },
+                "Account & Access": { priority: "High", technician: "L. Dlamini" },
+                "Software": { priority: "Low", technician: "Unassigned" }
+            };
+
+            const categorySelect = document.getElementById('category');
+            const prioritySelect = document.getElementById('priority');
+            const technicianSelect = document.getElementById('technician');
+
+            // 3. Listen for changes in the Request Category
+            categorySelect.addEventListener('change', function() {
+                const selectedCategory = this.value;
+                const automatedUpdates = ticketLogic[selectedCategory];
+                
+                // If the category exists in our logic, auto-change the priority and technician
+                if (automatedUpdates) {
+                    prioritySelect.value = automatedUpdates.priority;
+                    technicianSelect.value = automatedUpdates.technician;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
 </body>
     </html>
     
