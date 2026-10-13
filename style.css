@@ -592,3 +592,134 @@ footer a:hover {
         padding: 4rem 0;
     }
 }
+/*=========================================
+  TICKET PAGE LAYOUT & FORM (NEW)
+=========================================*/
+.ticket-split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.ticket-form-column {
+    flex: 1 1 500px; /* Allows form to stretch comfortably */
+}
+
+.ticket-info-column {
+    flex: 1 1 350px; /* Keeps the right side tight and structured */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ticket-form-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+}
+
+.card-subtitle {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.blue-line {
+    display: inline-block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.ticket-form-card h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #fff;
+    color: #333;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+/* Grays out the date/time box to show it is auto-generated */
+.form-group input[readonly] {
+    background-color: #f9f9f9;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.form-note {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon-clock {
+    font-size: 1.1rem;
+}
+
+.btn-submit-ticket {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .ticket-split-layout {
+        flex-direction: column;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
