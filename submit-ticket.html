@@ -192,14 +192,14 @@
             <p>&copy; 2026 NovaTech Solutions Hub. Academic Project.</p>
         </div>
     </footer>
-        <!-- Add this JavaScript right before the closing </body> tag -->
+
+    <!-- JavaScript Automation Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
             // 1. Automatically set the exact current Date and Time
             const timestampInput = document.getElementById('timestamp');
             const now = new Date();
-            // Format time correctly for the datetime-local HTML input
             now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
             timestampInput.value = now.toISOString().slice(0, 16);
 
@@ -220,7 +220,6 @@
                 const selectedCategory = this.value;
                 const automatedUpdates = ticketLogic[selectedCategory];
                 
-                // If the category exists in our logic, auto-change the priority and technician
                 if (automatedUpdates) {
                     prioritySelect.value = automatedUpdates.priority;
                     technicianSelect.value = automatedUpdates.technician;
@@ -229,8 +228,5 @@
         });
     </script>
 </body>
-</html>
-
-</body>
-    </html>
+                                    </html>
     
