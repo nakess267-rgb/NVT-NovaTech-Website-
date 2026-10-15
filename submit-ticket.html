@@ -50,74 +50,79 @@
                         <h2>Describe the issue</h2>
                         
                         <!-- Dummy form action for HTML frontend -->
-                        <form action="#" method="get" class="ticket-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="timestamp">Timestamp submitted</label>
-                                    <input type="datetime-local" id="timestamp" name="timestamp" value="2026-10-13T17:02" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="requester">Requester name</label>
-                                    <input type="text" id="requester" name="requester" placeholder="Full name" required>
-                                </div>
-                            </div>
+                        <!-- Ticket Logging Form -->
+<form action="#" method="get" class="ticket-form">
+    
+    <!-- 1. Incident ID (Auto-generated) -->
+    <div class="form-group">
+        <label for="incident_id">Incident ID</label>
+        <input type="text" id="incident_id" name="incident_id" readonly style="background-color: #f8f9fa; cursor: not-allowed; font-weight: bold; color: #555;">
+    </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="department">Department</label>
-                                    <select id="department" name="department" required>
-                                        <option value="" disabled>Select Department</option>
-                                        <option value="Technical Support/Helpdesk" selected>Technical Support/Helpdesk</option>
-                                        <option value="Finance">Finance</option>
-                                        <option value="Cybersecurity">Cybersecurity</option>
-                                        <option value="Human Resources">Human Resources</option>
-                                        <option value="Operations">Operations</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="category">Request category</label>
-                                    <select id="category" name="category" required>
-                                        <option value="" disabled>Select Category</option>
-                                        <option value="Hardware" selected>Hardware</option>
-                                        <option value="Network/Connectivity">Network/Connectivity</option>
-                                        <option value="Account & Access">Account & Access</option>
-                                        <option value="Software">Software</option>
-                                    </select>
-                                </div>
-                            </div>
+    <!-- 2. Request Category -->
+    <div class="form-group">
+        <label for="category">Request Category</label>
+        <select id="category" name="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Network/Connectivity">Network/Connectivity</option>
+            <option value="Account & Access">Account & Access</option>
+        </select>
+    </div>
 
-                            <div class="form-group">
-                                <label for="description">Short description of issue</label>
-                                <textarea id="description" name="description" rows="4" placeholder="Explain what happened and how it affects your work" required></textarea>
-                            </div>
+    <!-- 3. Priority Level -->
+    <div class="form-group">
+        <label for="priority">Priority Level</label>
+        <select id="priority" name="priority" required>
+            <option value="" disabled selected>Select Priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+    </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="priority">Priority level</label>
-                                    <select id="priority" name="priority">
-                                        <option value="Critical">Critical</option>
-                                        <option value="High">High</option>
-                                        <option value="Medium" selected>Medium</option>
-                                        <option value="Low">Low</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="technician">Assigned technician</label>
-                                    <select id="technician" name="technician">
-                                        <option value="R. Botha" selected>R. Botha</option>
-                                        <option value="S. Naidoo">S. Naidoo</option>
-                                        <option value="L. Dlamini">L. Dlamini</option>
-                                        <option value="Unassigned">Unassigned</option>
-                                    </select>
-                                </div>
-                            </div>
+    <!-- 4. Short Description of Issue -->
+    <div class="form-group">
+        <label for="description">Short Description of Issue</label>
+        <textarea id="description" name="description" rows="4" required placeholder="Briefly describe the problem..."></textarea>
+    </div>
 
-                            <div class="form-note">
-                                <span class="icon-clock">&#9202;</span> These suggestions follow the workbook and can be overridden for this issue.
-                            </div>
+    <!-- 5. Assigned Technician -->
+    <div class="form-group">
+        <label for="technician">Assigned Technician</label>
+        <select id="technician" name="technician" required>
+            <option value="" disabled selected>Select Technician</option>
+            <option value="S. Naidoo">S. Naidoo</option>
+            <option value="L. Dlamini">L. Dlamini</option>
+            <option value="R. Botha">R. Botha</option>
+            <option value="Unassigned">Unassigned</option>
+        </select>
+    </div>
 
-                            <button type="submit" class="btn btn-primary btn-submit-ticket">Log Ticket &#10148;</button>
-                        </form>
+    <!-- 6. Resolution Time -->
+    <div class="form-group">
+        <label for="resolution_time">Resolution Time</label>
+        <select id="resolution_time" name="resolution_time" required>
+            <option value="" disabled selected>Select Expected Resolution Time</option>
+            <option value="1-4 Hours (High Priority)">1-4 Hours (High Priority)</option>
+            <option value="24 Hours (Medium Priority)">24 Hours (Medium Priority)</option>
+            <option value="48-72 Hours (Low Priority)">48-72 Hours (Low Priority)</option>
+        </select>
+    </div>
+
+    <!-- 7. Current Status -->
+    <div class="form-group">
+        <label for="status">Current Status</label>
+        <select id="status" name="status" required>
+            <option value="Open" selected>Open</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-submit-ticket">Log Ticket &#10148;</button>
+</form>
                         <!-- Success Message (Hidden by default) -->
 <div id="success-message" style="display: none; text-align: center; padding: 2rem; background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; margin-top: 1rem;">
     <h3 style="color: #2e7d32; margin-bottom: 0.5rem;">✅ Ticket Logged Successfully!</h3>
@@ -201,50 +206,51 @@
     </footer>
 
     <!-- JavaScript Automation Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+<!-- JavaScript Automation Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // 1. Generate Incident ID automatically (e.g., INC-4928)
+        const incidentIdInput = document.getElementById('incident_id');
+        const randomNum = Math.floor(1000 + Math.random() * 9000); 
+        incidentIdInput.value = 'INC-' + randomNum;
+
+        // 2. Ticket Logic based on the selected Category
+        const ticketLogic = {
+            "Hardware": { priority: "Medium", technician: "R. Botha", time: "24 Hours (Medium Priority)" },
+            "Network/Connectivity": { priority: "High", technician: "S. Naidoo", time: "1-4 Hours (High Priority)" },
+            "Account & Access": { priority: "High", technician: "L. Dlamini", time: "1-4 Hours (High Priority)" },
+            "Software": { priority: "Low", technician: "Unassigned", time: "48-72 Hours (Low Priority)" }
+        };
+
+        const categorySelect = document.getElementById('category');
+        const prioritySelect = document.getElementById('priority');
+        const technicianSelect = document.getElementById('technician');
+        const resolutionTimeSelect = document.getElementById('resolution_time');
+
+        // 3. Listen for changes in the Request Category
+        categorySelect.addEventListener('change', function() {
+            const selectedCategory = this.value;
+            const automatedUpdates = ticketLogic[selectedCategory];
             
-            // 1. Automatically set the exact current Date and Time
-            const timestampInput = document.getElementById('timestamp');
-            const now = new Date();
-            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-            timestampInput.value = now.toISOString().slice(0, 16);
-
-            // 2. Ticket Logic based on the NovaTech Excel Workbook data
-            const ticketLogic = {
-                "Hardware": { priority: "Medium", technician: "R. Botha" },
-                "Network/Connectivity": { priority: "Critical", technician: "S. Naidoo" },
-                "Account & Access": { priority: "High", technician: "L. Dlamini" },
-                "Software": { priority: "Low", technician: "Unassigned" }
-            };
-
-            const categorySelect = document.getElementById('category');
-            const prioritySelect = document.getElementById('priority');
-            const technicianSelect = document.getElementById('technician');
-
-            // 3. Listen for changes in the Request Category
-            categorySelect.addEventListener('change', function() {
-                const selectedCategory = this.value;
-                const automatedUpdates = ticketLogic[selectedCategory];
-                
-                if (automatedUpdates) {
-                    prioritySelect.value = automatedUpdates.priority;
-                    technicianSelect.value = automatedUpdates.technician;
-                }
-            });
-
-            // 4. Handle Form Submission to show "Ticket Logged" message
-            const ticketForm = document.querySelector('.ticket-form');
-            const successMessage = document.getElementById('success-message');
-
-            ticketForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // Stops the page from refreshing
-                ticketForm.style.display = 'none'; // Hides the form
-                successMessage.style.display = 'block'; // Shows the green success box
-            });
+            if (automatedUpdates) {
+                prioritySelect.value = automatedUpdates.priority;
+                technicianSelect.value = automatedUpdates.technician;
+                resolutionTimeSelect.value = automatedUpdates.time;
+            }
         });
-    </script>
+
+        // 4. Handle Form Submission to show "Ticket Logged" message
+        const ticketForm = document.querySelector('.ticket-form');
+        const successMessage = document.getElementById('success-message');
+
+        ticketForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stops the page from refreshing
+            ticketForm.style.display = 'none'; // Hides the form
+            successMessage.style.display = 'block'; // Shows the green success box
+        });
+    });
+            </script>
     
-</body>
                                     </html>
     
