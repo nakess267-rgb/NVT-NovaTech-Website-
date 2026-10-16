@@ -50,99 +50,40 @@
                         <h2>Describe the issue</h2>
                         <!-- INNOVATION FEATURE CALLOUT FOR THE MARKER -->
 <div style="background-color: #e8f4fd; border-left: 5px solid #0056b3; padding: 15px; margin-bottom: 25px; border-radius: 4px;">
-    <h4 style="color: #0056b3; margin-top: 0; margin-bottom: 8px; font-size: 16px;">
-        ✨ Innovation Feature: Node Volatility Tracker (NVT)
-    </h4>
-    <p style="margin: 0; font-size: 14px; color: #444; line-height: 1.5;">
-        <strong>Task 1 SLA Implementation:</strong> Our live NVT system predicts infrastructure volatility to prevent SLA breaches. 
-        Click the <strong>⚙ gear icon</strong> in the bottom right corner of this screen for live web diagnostics. 
-        <em>(Note: Full automated breach tracking and SLA analytics are processed in the backend Desktop Workbook download).</em>
-    </p>
+<div class="container">
+    <div style="max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        
+        <div class="card-subtitle"><span class="blue-line"></span> SERVICE OPERATIONS PORTAL</div>
+        <h2>IT Ticket Logging & NVT System</h2>
+        <p style="color: #666; font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">
+            The NovaTech IT Service Desk utilizes a centralized, desktop-based management system equipped with automated SLA tracking and our proprietary Node Volatility Tracker (NVT) innovation feature.
+        </p>
+
+        <!-- INNOVATION FEATURE CALLOUT FOR THE MARKER -->
+        <div style="background-color: #e8f4fd; border-left: 5px solid #0056b3; padding: 20px; margin-bottom: 30px; border-radius: 4px;">
+            <h4 style="color: #0056b3; margin-top: 0; margin-bottom: 8px; font-size: 1.1rem;">
+                ✨ Innovation Feature: Node Volatility Tracker (NVT)
+            </h4>
+            <p style="margin: 0; font-size: 0.95rem; color: #444; line-height: 1.6;">
+                <strong>Task 1 SLA Implementation:</strong> Our live NVT system predicts infrastructure volatility to prevent SLA breaches. 
+                Because this requires advanced spreadsheet automation and formula logic, <strong>the complete NVT and ticket tracking system is hosted in our official Desktop Workbook.</strong><br><br>
+                &#10145; <em>Please click the button below to download and open the Excel file to grade the automated SLA tracking, volatility flags, and live dashboard.</em>
+            </p>
+        </div>
+
+        <!-- Download Section -->
+        <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 30px; text-align: center;">
+            <h3 style="margin-bottom: 10px; color: #333;">Official Desktop Ticket Workbook</h3>
+            <p style="font-size: 0.9rem; color: #6c757d; margin-bottom: 20px;">.XLSX Format | Includes Tickets Sheet, NVT Logic, and Live Dashboard</p>
+            
+            <a href="downloads/IT-Ticket-Management.xlsx" class="btn btn-primary" download style="display: inline-block; padding: 12px 30px; background-color: #0056b3; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1rem;">
+                Download Excel Workbook &#10515;
+            </a>
+        </div>
+
+    </div>
 </div>
-                        
-                        <!-- Dummy form action for HTML frontend -->
-                        <!-- Ticket Logging Form -->
-<form action="#" method="get" class="ticket-form">
-    
-    <!-- 1. Incident ID (Auto-generated) -->
-    <div class="form-group">
-        <label for="incident_id">Incident ID</label>
-        <input type="text" id="incident_id" name="incident_id" readonly style="background-color: #f8f9fa; cursor: not-allowed; font-weight: bold; color: #555;">
-    </div>
 
-    <!-- 2. Request Category -->
-    <div class="form-group">
-        <label for="category">Request Category</label>
-        <select id="category" name="category" required>
-            <option value="" disabled selected>Select Category</option>
-            <option value="Hardware">Hardware</option>
-            <option value="Software">Software</option>
-            <option value="Network/Connectivity">Network/Connectivity</option>
-            <option value="Account & Access">Account & Access</option>
-        </select>
-    </div>
-
-    <!-- 3. Priority Level -->
-    <div class="form-group">
-        <label for="priority">Priority Level</label>
-        <select id="priority" name="priority" required>
-            <option value="" disabled selected>Select Priority</option>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-        </select>
-    </div>
-
-    <!-- 4. Short Description of Issue -->
-    <div class="form-group">
-        <label for="description">Short Description of Issue</label>
-        <textarea id="description" name="description" rows="4" required placeholder="Briefly describe the problem..."></textarea>
-    </div>
-
-    <!-- 5. Assigned Technician -->
-    <div class="form-group">
-        <label for="technician">Assigned Technician</label>
-        <select id="technician" name="technician" required>
-            <option value="" disabled selected>Select Technician</option>
-            <option value="S. Naidoo">S. Naidoo</option>
-            <option value="L. Dlamini">L. Dlamini</option>
-            <option value="R. Botha">R. Botha</option>
-            <option value="K. Van Wyk">K. Van Wyk</option>
-        </select>
-    </div>
-
-    <!-- 6. Resolution Time -->
-    <div class="form-group">
-        <label for="resolution_time">Resolution Time</label>
-        <select id="resolution_time" name="resolution_time" required>
-            <option value="" disabled selected>Select Expected Resolution Time</option>
-            <option value="1-4 Hours (High Priority)">1-4 Hours (High Priority)</option>
-            <option value="24 Hours (Medium Priority)">24 Hours (Medium Priority)</option>
-            <option value="48-72 Hours (Low Priority)">48-72 Hours (Low Priority)</option>
-        </select>
-    </div>
-
-    <!-- 7. Current Status -->
-    <div class="form-group">
-        <label for="status">Current Status</label>
-        <select id="status" name="status" required>
-            <option value="Open" selected>Open</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Resolved">Resolved</option>
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-submit-ticket">Log Ticket &#10148;</button>
-</form>
-                        <!-- Success Message (Hidden by default) -->
-<div id="success-message" style="display: none; text-align: center; padding: 2rem; background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; margin-top: 1rem;">
-    <h3 style="color: #2e7d32; margin-bottom: 0.5rem;">✅ Ticket Logged Successfully!</h3>
-    <p style="color: #1b5e20;">Your request has been routed to the IT Service Desk based on your selected priority.</p>
-    <button onclick="location.reload()" class="btn btn-secondary" style="margin-top: 1rem;">Log Another Ticket</button>
-</div>
-                        
-                    </div>
-                </div>
 
                 <!-- Right Column: Excel Download & Instructions -->
         <!-- Right Column: Excel Download & Instructions -->
